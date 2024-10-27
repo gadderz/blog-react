@@ -25,28 +25,20 @@ const Content = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          <h1>Últimas do blog</h1>
-        </Col>
-      </Row>
-      {
-        mockContent.map(content => {
-          return (
-            <div>
-              <Row>
-                <Col>
-                  <h2>{content.Title}</h2>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
+        <div className="d-flex flex-column gap-3 pt-5">
+          <h2>Últimas do blog</h2>
+          {
+            mockContent.map(content => {
+              return (
+                <div className="d-flex flex-column">
+                  <p className="fs-4 text-primary m-0">{content.Title}</p>
                   <p>{content.Content}</p>
-                </Col>
-              </Row>
-            </div>
-          )
-        })
-      }
+                </div>
+              )
+            })
+          }
+        </div>
+      </Row>
     </Container>
   );
 }
